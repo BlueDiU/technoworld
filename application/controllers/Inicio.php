@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 require_once APPPATH.'controllers/Base.php';
 class Inicio extends Base {
   
@@ -13,9 +14,21 @@ class Inicio extends Base {
 		$this->load->view('dashboard/menus');
         $this->load->view('Inicio/index');
         $this->load->view('dashboard/footer');
+=======
+require_once APPPATH . 'controllers/Base.php';
+class Inicio extends Base
+{
 
-	}
+  public function __construct()
+  {
+    parent::__construct();
+  }
+>>>>>>> main
 
+  function index()
+  {
+
+<<<<<<< HEAD
 	public function login(){
 
 		$usuario = $this->input->post('usuario');
@@ -39,9 +52,22 @@ class Inicio extends Base {
 		$this->load->view('dashboard/header');
         $this->load->view('Inicio/login');
         $this->load->view('dashboard/footer');
+=======
+    $this->load->view('dashboard/header');
+    $this->load->view('dashboard/menus');
+    $this->load->view('Inicio/index');
+    $this->load->view('dashboard/footer');
+  }
+>>>>>>> main
 
-	}
+  function login()
+  {
+    $this->load->view('dashboard/header');
+    $this->load->view('Inicio/login');
+    $this->load->view('dashboard/footer');
+  }
 
+<<<<<<< HEAD
 	function registrarse(){
 		$this->load->view('dashboard/header');
         $this->load->view('Clientes/registro');
@@ -52,3 +78,12 @@ class Inicio extends Base {
 
    
 }
+=======
+  function registrarse()
+  {
+    $this->load->view('dashboard/header');
+    $this->load->view('Clientes/registro');
+    $this->load->view('dashboard/footer');
+  }
+}
+>>>>>>> main
