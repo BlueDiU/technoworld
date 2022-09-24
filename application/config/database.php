@@ -75,9 +75,9 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
+	'hostname' => '190.5.147.250',
+	'username' => 'AS2',
+	'password' => 'AS2022$',
 	'database' => 'technoworld',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
