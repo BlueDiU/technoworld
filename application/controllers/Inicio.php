@@ -23,18 +23,29 @@ class Inicio extends Base
     $usuario = $this->input->post('usuario');
     $password = $this->input->post('password');
 
-    echo $usuario;
-    echo $password;
+    if(!empty($usuario)){
 
-    if (isset($_POST['password'])) {
 
-      echo "entre";
+    $get_usuario = $this->Inicio_model->login($usuario);
+   
+   if(!empty($get_usuario)){
 
-      if ($this->Inicio_model->login($_POST['usuario'], md5($_POST['password']))) {
+    if($get_usuario[0]->contrasenia == md5($password)){
+      
+      if($get_usuario[0]->rol == 1){
+
         redirect('Productos');
-      } else {
-        redirect('Inicio/login');
+
+      }elseif($get_usuario[0]->rol == 2){
+
+        redirect('Inicio');
+    
       }
+    }
+
+   }
+
+
     }
 
     $this->load->view('dashboard/header');
