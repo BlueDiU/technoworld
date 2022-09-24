@@ -16,7 +16,7 @@
       <div class=" w-50 shadow p-3 mb-5 bg-body rounded">
         <div class="card-header py-3 bg-white global-red-color fw-bold">Acceder</div>
         <div class="card-body">
-          <form>
+          <form action="" method="POST">
             <div class="mb-3">
               <img
                 src="<?= base_url();?>\assets\images\logo.png"
@@ -28,20 +28,21 @@
               <div class="mb-3 px-3">
                 <input
                   type="text"
-                  name="correo"
+                  name="usuario"
+                  id="usuario"
                   class="form-control"
                   required
-                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-                  placeholder="Correo electrónico"
-                  title="Ingrese un correo electrónico válido"
+                  placeholder="Usuario"
+                  title="Ingrese su usuario"
                 />
               </div>
               <div class="mb-3 px-3">
                 <input
                   name="password"
+                  id="password"
                   type="password"
                   class="form-control"
-                  placeholder="Contraseña"
+                  placeholder="Ingrese su contraseña"
                   required
                 />
               </div>

@@ -4,7 +4,7 @@ class Inicio extends Base {
   
     public function __construct(){
         parent::__construct();
-
+         $this->load->model('Inicio_model');
      }
 	
 	function index(){
@@ -16,7 +16,26 @@ class Inicio extends Base {
 
 	}
 
-	function login(){
+	public function login(){
+
+		$usuario = $this->input->post('usuario');
+		$password = $this->input->post('password');
+
+		echo $usuario;
+		echo $password;
+
+		if(isset($_POST['password'])){	
+
+			echo "entre";
+
+			if($this->Inicio_model->login($_POST['usuario'],md5($_POST['password']))){
+				redirect('Productos');
+			}else{
+				redirect('Inicio/login');
+			}
+
+		}
+
 		$this->load->view('dashboard/header');
         $this->load->view('Inicio/login');
         $this->load->view('dashboard/footer');
@@ -29,5 +48,7 @@ class Inicio extends Base {
         $this->load->view('dashboard/footer');
 
 	}
+
+
    
 }
