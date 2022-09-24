@@ -54,9 +54,7 @@
           <section class="admin-card rounded center-all cursor-pointer mb-4">
             <div class="d-flex justify-content-between align-items-center">
               <i class="bi bi-person-plus-fill admin-icon"></i>
-              <a href="<?= base_url(); ?>index.php/Clientes/index" class="global-red-color fw-bold ms-2">
-                <span class="global-red-color fw-bold ms-2">Agregar clientes</span>
-              </a>
+              <a href="<?= base_url(); ?>index.php/Clientes/index"><span class="global-red-color fw-bold ms-2">Agregar clientes</span></a>
             </div>
           </section>
         </div>
@@ -64,7 +62,7 @@
           <section class="admin-card rounded center-all cursor-pointer mb-4">
             <div class="d-flex justify-content-between align-items-center">
               <i class="bi bi-person-plus-fill admin-icon"></i>
-              <span class="global-red-color fw-bold ms-2">Agregar empleados</span>
+              <a href="<?= base_url(); ?>index.php/Empleados/index"><span class="global-red-color fw-bold ms-2">Agregar empleados</span></a>
             </div>
           </section>
         </div>
@@ -89,7 +87,7 @@
         <section class="admin-card rounded center-all cursor-pointer mb-4">
           <div class="d-flex justify-content-between align-items-center">
             <i class="bi bi-tag-fill admin-icon"></i>
-            <span class="global-red-color fw-bold ms-2">Agregar categorias</span>
+            <a href="<?= base_url(); ?>index.php/Categorias/index"><span class="global-red-color fw-bold ms-2">Agregar categorias</span></a>
           </div>
         </section>
       </div>
