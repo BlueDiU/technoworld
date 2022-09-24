@@ -70,9 +70,8 @@
                 class="d-flex justify-content-between align-items-center"
               >
                 <i class="bi bi-person-plus-fill admin-icon"></i>
-                <span class="global-red-color fw-bold ms-2"
-                  >Agregar empleados</span
-                >
+                <a href="<?= base_url();?>index.php/Empleados/index"><span class="global-red-color fw-bold ms-2"
+                  >Agregar empleados</span></a>
               </div>
             </section>
           </div>
