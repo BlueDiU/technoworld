@@ -24,6 +24,11 @@ class Clientes_model extends CI_Model{
     return $result;
   }
 
+  function save_usuario($data){
+    $result=$this->db->insert('usuarios',$data);
+    return $result;
+  }
+
    function update_cliente($code,$data){
     $this->db->where('id_cliente', $code);
     $this->db->update('cliente',$data);

@@ -28,6 +28,8 @@ class Clientes extends Base
     $correo = $this->input->post('correo');
     $fecha = $this->input->post('fecha');
     $direccion = $this->input->post('direccion');
+    $usuario = $this->input->post('usuario');
+    $password = $this->input->post('password');
 
     $data = '';
     $bandera = true;
@@ -63,18 +65,41 @@ class Clientes extends Base
       $bandera = false;
     }
 
+    if ($usuario == null) {
+      $data .= 'Debe de ingresar un usuario<br>';
+      $bandera = false;
+    }
+
+    if ($password == null) {
+      $data .= 'Debe de ingresar una contraseña<br>';
+      $bandera = false;
+    }
+
    
     if ($bandera) {
       $data = array(
-        'dui'     => $dui,
-        'nombre'     => $nombre,
+        'dui'              => $dui,
+        'nombre'           => $nombre,
         'telefono'         => $telefono,
-        'correo'         => $correo,
-        'fecha_nacimiento'         => $fecha,
+        'correo'            => $correo,
+        'fecha_nacimiento'  => $fecha,
         'direccion'         => $direccion,
-        'estado'         => 1,
+        'estado'            => 1,
       );
+
       $this->Clientes_model->save_cliente($data);
+
+
+      $data2 = array(
+        'usuario'             => $usuario,
+        'id_empleado'         => $this->db->insert_id(),
+        'contrasenia'         => md5($password),
+        'rol'                 => 2,
+        'estado'              => 1,
+      );
+
+      $this->Clientes_model->save_usuario($data2);
+
       echo json_encode(null);
     } else {
       echo json_encode($data);
