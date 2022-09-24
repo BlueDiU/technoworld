@@ -17,29 +17,29 @@ class Inicio extends Base
     $this->load->view('dashboard/footer');
   }
 
-  function login()
+  public function login()
   {
+
     $usuario = $this->input->post('usuario');
-		$password = $this->input->post('password');
+    $password = $this->input->post('password');
 
-		echo $usuario;
-		echo $password;
+    echo $usuario;
+    echo $password;
 
-		if(isset($_POST['password'])){	
+    if (isset($_POST['password'])) {
 
-			echo "entre";
+      echo "entre";
 
-			if($this->Inicio_model->login($_POST['usuario'],md5($_POST['password']))){
-				redirect('Productos');
-			}else{
-				redirect('Inicio/login');
-			}
+      if ($this->Inicio_model->login($_POST['usuario'], md5($_POST['password']))) {
+        redirect('Productos');
+      } else {
+        redirect('Inicio/login');
+      }
+    }
 
-		}
-
-		$this->load->view('dashboard/header');
-        $this->load->view('Inicio/login');
-        $this->load->view('dashboard/footer');
+    $this->load->view('dashboard/header');
+    $this->load->view('Inicio/login');
+    $this->load->view('dashboard/footer');
   }
 
   function registrarse()
