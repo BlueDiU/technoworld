@@ -39,6 +39,7 @@
         </li>
 
       </div>
+<<<<<<< HEAD
     </nav>
   </div>
 
@@ -59,6 +60,64 @@
               </a>
             </div>
           </section>
+=======
+      <article class="mt-6">
+        <div class="admin-opt">
+          <div>
+            <section
+              class="admin-card rounded center-all cursor-pointer mb-4"
+            >
+              <div
+                class="d-flex justify-content-between align-items-center"
+              >
+                <i class="bi bi-person-plus-fill admin-icon"></i>
+                <span class="global-red-color fw-bold ms-2"
+                  >Agregar clientes</span
+                >
+              </div>
+            </section>
+          </div>
+          <div>
+            <section
+              class="admin-card rounded center-all cursor-pointer mb-4"
+            >
+              <div
+                class="d-flex justify-content-between align-items-center"
+              >
+                <i class="bi bi-person-plus-fill admin-icon"></i>
+                <a href="<?= base_url();?>index.php/Empleados/index"><span class="global-red-color fw-bold ms-2"
+                  >Agregar empleados</span></a>
+              </div>
+            </section>
+          </div>
+          <div>
+            <section
+              class="admin-card rounded center-all cursor-pointer mb-4"
+            >
+              <div
+                class="d-flex justify-content-between align-items-center"
+              >
+                <i class="bi bi-bag-plus-fill admin-icon"></i>
+                <a href="<?= base_url();?>index.php/Productos/index"><span class="global-red-color fw-bold ms-2"
+                  >Agregar productos</span></a>
+              </div>
+            </section>
+          </div>
+          <div>
+            <section
+              class="admin-card rounded center-all cursor-pointer mb-4"
+            >
+              <div
+                class="d-flex justify-content-between align-items-center"
+              >
+              <i class="bi bi-box-fill admin-icon"></i> 
+                 <a href="<?= base_url();?>index.php/Proveedores/index"><span class="global-red-color fw-bold ms-2"
+                  >Agregar proveedor</span
+                ></a>
+              </div>
+            </section>
+          </div>
+>>>>>>> CRUD-empleados
         </div>
         <div>
           <section class="admin-card rounded center-all cursor-pointer mb-4">
