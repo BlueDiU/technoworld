@@ -76,7 +76,7 @@
               <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre cliente">
             </div>
           </div>
-          
+
           <div class="form-group row">
             <div class="col-md-12">
               <label class="col-form-label">Telefono cliente:</label>
@@ -150,7 +150,7 @@
               <input type="text" name="edit_nombre" id="edit_nombre" class="form-control" placeholder="Nombre cliente">
             </div>
           </div>
-          
+
           <div class="form-group row">
             <div class="col-md-12">
               <label class="col-form-label">Telefono cliente:</label>
@@ -239,7 +239,7 @@
     var telefono = $("#telefono").val();
     var correo = $("#correo").val();
     var fecha = $("#fecha").val();
-    var direccion = $("#direccion").val();    
+    var direccion = $("#direccion").val();
 
     $.ajax({
       type: "POST",

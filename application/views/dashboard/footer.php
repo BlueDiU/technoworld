@@ -3,7 +3,7 @@
       <div class="container text-center">
         <div class="row">
           <div class="col">
-            <img width="139px" height="160px" class="img-fluid" src="<?= base_url();?>\assets\images\logo.png" alt="logo">
+            <img width="139px" height="160px" class="img-fluid" src="<?= base_url(); ?>\assets\images\logo.png" alt="logo">
           </div>
           <div class="col text-start">
             <h6 class="fw-bold global-red-color">Compañia</h6>
@@ -16,7 +16,7 @@
               </a>
               <a class="fw-normal d-block custom-link red-color-link" href="#">
                 Contactanos
-              </a>            
+              </a>
             </section>
           </div>
           <div class="col text-start">
@@ -30,13 +30,13 @@
               </a>
               <a class="fw-normal d-block custom-link red-color-link" href="#">
                 ¿Por qué preferirnos?
-              </a>            
+              </a>
               <a class="fw-normal d-block custom-link red-color-link" href="#">
                 Guia
-              </a>  
+              </a>
               <a class="fw-normal d-block custom-link red-color-link" href="#">
                 Otros
-              </a>            
+              </a>
             </section>
           </div>
           <div class="col text-start">
@@ -55,14 +55,14 @@
                 <i class="me-2 bi bi-facebook"></i>
                 <i class="mx-2 bi bi-twitter"></i>
                 <i class="mx-2 bi bi-instagram"></i>
-                <i class="ms-2 bi bi-linkedin"></i> 
-              </div>   
+                <i class="ms-2 bi bi-linkedin"></i>
+              </div>
             </section>
           </div>
         </div>
         <hr class="mt-5">
         <div class="text-start fw-normal red-color-link">
-          &copy; 2022 Technoworld.com | Todos los derechos reservados 
+          &copy; 2022 Technoworld.com | Todos los derechos reservados
         </div>
       </div>
     </footer>
