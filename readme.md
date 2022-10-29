@@ -1,6 +1,6 @@
-#Universidad Francisco Gavidia
+# Universidad Francisco Gavidia
 
-# Proyecto: technoworld
+## Proyecto: technoworld
 
 | Integrantes                        | Carne    |
 | ---------------------------------- | -------- |
