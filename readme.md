@@ -34,7 +34,8 @@ Este proyecto fue realizado con las siguientes tecnologías:
 
 > Pasos
 
-1. Clonar el repositorio o descargarlo en formato zip
-2. Mover la carpeta del proyecto a la carpeta htdocs de XAMPP
+1. Clonar el repositorio o descargarlo en formato zip.
+2. Mover la carpeta del proyecto a la carpeta `htdocs` de XAMPP.
 3. Crear una base de datos en MySQL con el nombre de `technoworld.sql`, este paso en caso que la base de datos no este conectada a la base de datos desplegada en el servidor.
 4. Abrir el navegador web y escribir la siguiente dirección `http://localhost/technoworld/`
+5. Listo, ya puedes navegar por la página web.
