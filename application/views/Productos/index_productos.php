@@ -7,7 +7,7 @@
   <div class="row">
     <div class="col-sm-12">
       <div class="well">
-        <nav class="float-right"><?php ?><a href="#" class="btn btn-primary" data-toggle="modal" data-target="#Modal_Add"><span class="fa fa-plus"></span> Agregar Nuevo</a><?php ?><br><br></nav>
+        <nav class="float-right"><?php ?><a href="#" onclick="Limpiar()" class="btn btn-primary" data-toggle="modal" data-target="#Modal_Add"><span class="fa fa-plus"></span> Agregar Nuevo</a><?php ?><br><br></nav>
         <table class="table table-striped table-hover" id="mydata">
           <thead>
             <tr>
@@ -58,9 +58,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h3 class="modal-title" id="exampleModalLabel">Agregar nuevo producto</h3>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+        
         </div>
         <div class="modal-body">
           <div class="col-md-12">
@@ -147,20 +145,12 @@
             </div>
           </div>
 
-          <div class="form-group row">
-            <div class="col-md-4">
-              <label class="col-form-label">Imagen del producto [300x300]:</label>
-              <input type="file" name="img1" id="img1">
-            </div>
-
-          </div>
-
         </div>
 
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
 
-          <button type="button" id="btn_save" class="btn btn-primary" onclick="save_product();">
+          <button type="button" id="btn_save" class="btn btn-primary">
             Guardar</button>
 
         </div>
@@ -177,9 +167,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h3 class="modal-title" id="exampleModalLabel">Editar producto</h3>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+  
         </div>
         <div class="modal-body">
           <div class="col-md-12">
@@ -285,9 +273,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Eliminar producto</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+    
         </div>
         <div class="modal-body">
           <strong>¿Seguro que desea eliminar este producto?</strong>
@@ -476,5 +462,10 @@
         this.disabled = false;
       },
     });
+  }
+
+  function Limpiar(){
+    document.getElementById("validacion").innerHTML = "";
+    document.getElementById("validacion_edit").innerHTML = "";
   }
 </script>

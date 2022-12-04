@@ -7,7 +7,7 @@
   <div class="row">
     <div class="col-sm-12">
       <div class="well">
-        <nav class="float-right"><?php ?><a href="#" class="btn btn-primary" data-toggle="modal" data-target="#Modal_Add"><span class="fa fa-plus"></span> Agregar Nuevo</a><?php ?><br><br></nav>
+        <nav class="float-right"><?php ?><a href="#" onclick="Limpiar()" class="btn btn-primary" data-toggle="modal" data-target="#Modal_Add"><span class="fa fa-plus"></span> Agregar Nuevo</a><?php ?><br><br></nav>
         <table class="table table-striped table-hover" id="mydata">
           <thead>
             <tr>
@@ -45,9 +45,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h3 class="modal-title" id="exampleModalLabel">Agregar nueva categoria</h3>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+     
         </div>
         <div class="modal-body">
           <div class="col-md-12">
@@ -90,9 +88,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h3 class="modal-title" id="exampleModalLabel">Editar Categoria</h3>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+ 
         </div>
         <div class="modal-body">
           <div class="col-md-12">
@@ -138,9 +134,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Eliminar categoria</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+        
         </div>
         <div class="modal-body">
           <strong>¿Seguro que desea eliminar esta categoria?</strong>
@@ -293,5 +287,10 @@
         this.disabled = false;
       },
     });
+  }
+
+  function Limpiar(){
+    document.getElementById("validacion").innerHTML = "";
+    document.getElementById("validacion_edit").innerHTML = "";
   }
 </script>

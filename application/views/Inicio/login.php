@@ -30,7 +30,7 @@
             <button class="btn btn-primary center-block" type="submit">
               Continuar
             </button>
-            <a class="btn button" href="<?= base_url(); ?>index.php/Inicio">Salir</a>
+     
           </div>
         </form>
       </div>

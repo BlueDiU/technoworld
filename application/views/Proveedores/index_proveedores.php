@@ -7,7 +7,7 @@
   <div class="row">
     <div class="col-sm-12">
       <div class="well">
-        <nav class="float-right"><?php ?><a href="#" class="btn btn-primary" data-toggle="modal" data-target="#Modal_Add"><span class="fa fa-plus"></span> Agregar Nuevo proveedor</a><?php ?><br><br></nav>
+        <nav class="float-right"><?php ?><a href="#" onclick="Limpiar()" class="btn btn-primary" data-toggle="modal" data-target="#Modal_Add"><span class="fa fa-plus"></span> Agregar Nuevo proveedor</a><?php ?><br><br></nav>
         <table class="table table-striped" id="mydata">
           <thead>
             <tr>
@@ -52,9 +52,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h3 class="modal-title" id="exampleModalLabel">Agregar nuevo proveedor</h3>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+       
         </div>
         <div class="modal-body">
           <div class="col-md-12">
@@ -111,9 +109,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h3 class="modal-title" id="exampleModalLabel">Editar proveedor</h3>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+     
         </div>
         <div class="modal-body">
           <div class="col-md-12">
@@ -173,9 +169,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Eliminar provedor</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+      
         </div>
         <div class="modal-body">
           <strong>¿Seguro que desea eliminar este proveedor?</strong>
@@ -344,5 +338,10 @@
         this.disabled = false;
       },
     });
+  }
+
+  function Limpiar(){
+    document.getElementById("validacion").innerHTML = "";
+    document.getElementById("validacion_edit").innerHTML = "";
   }
 </script>

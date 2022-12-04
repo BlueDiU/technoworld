@@ -35,7 +35,7 @@
               <i class="bi bi-person-fill"></i></span></a>
 
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="<?= base_url(); ?>index.php/Inicio">Cerrar sesion</a>
+            <a class="dropdown-item" href="<?= base_url(); ?>index.php/Inicio/login">Cerrar sesion</a>
         </li>
 
       </div>

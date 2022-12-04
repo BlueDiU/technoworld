@@ -49,9 +49,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'Inicio';
+$route['default_controller'] = 'Inicio/login';
 $route['404_override'] = 'error_404.php';
 
-$route['dashboard'] = '/Inicio/index';//enlace para el boton dashboard del menu 
+$route['dashboard'] = '/Inicio/login';//enlace para el boton dashboard del menu 
 
 $route['translate_uri_dashes'] = FALSE;

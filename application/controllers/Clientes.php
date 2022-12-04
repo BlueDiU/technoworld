@@ -18,7 +18,7 @@ class Clientes extends Base
     $this->load->view('dashboard/footer');
   }
 
-  //Funcion para validar e ingresar nuevos proveedores
+  //Funcion para validar e ingresar nuevos clientes
   function guardar_cliente()
   {
     //Capturamos los valores que vinen por POST del Jquery
@@ -77,28 +77,30 @@ class Clientes extends Base
 
    
     if ($bandera) {
-      $data = array(
-        'dui'              => $dui,
-        'nombre'           => $nombre,
-        'telefono'         => $telefono,
-        'correo'            => $correo,
-        'fecha_nacimiento'  => $fecha,
-        'direccion'         => $direccion,
-        'estado'            => 1,
-      );
 
-      $this->Clientes_model->save_cliente($data);
-
-
-      $data2 = array(
+        $data2 = array(
         'usuario'             => $usuario,
-        'id_empleado'         => $this->db->insert_id(),
         'contrasenia'         => md5($password),
         'rol'                 => 2,
         'estado'              => 1,
       );
 
+
       $this->Clientes_model->save_usuario($data2);
+
+      $data = array(
+        'dui'               => $dui,
+        'nombre'            => $nombre,
+        'telefono'          => $telefono,
+        'correo'            => $correo,
+        'fecha_nacimiento'  => $fecha,
+        'direccion'         => $direccion,
+        'id_usuario'        => $this->db->insert_id(),
+        'estado'            => 1,
+      );
+
+      $this->Clientes_model->save_cliente($data);
+
 
       echo json_encode(null);
     } else {

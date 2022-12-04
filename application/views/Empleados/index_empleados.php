@@ -7,7 +7,7 @@
   <div class="row">
     <div class="col-sm-12">
       <div class="well">
-        <nav class="float-right"><?php ?><a href="#" class="btn btn-primary" data-toggle="modal" data-target="#Modal_Add"><span class="fa fa-plus"></span> Agregar Nuevo Empleado</a><?php ?><br><br></nav>
+        <nav class="float-right"><?php ?><a href="#" onclick="Limpiar()" class="btn btn-primary" data-toggle="modal" data-target="#Modal_Add"><span class="fa fa-plus"></span> Agregar Nuevo Empleado</a><?php ?><br><br></nav>
         <table class="table table-striped table-hover" id="mydata">
           <thead>
             <tr>
@@ -16,6 +16,8 @@
               <th>Teféfono</th>
               <th>Fecha de nacimiento</th>
               <th>Dirección</th>
+              <th>Usuario</th>
+
 
               <th>Acciones</th>
 
@@ -30,6 +32,8 @@
               echo "<td>" . $empl->telefono . "</td>";
               echo "<td>" . $empl->fecha_nacimiento . "</td>";
               echo "<td>" . $empl->direccion . "</td>";
+              echo "<td>" . $empl->usuario . "</td>";
+
 
               echo "<td>";
               echo "<a class='btn btn-success' title='Editar Empleado' onclick='editar(" . $empl->id_empleado . ")'><span class='glyphicon glyphicon-edit'></span></a>";
@@ -53,9 +57,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h3 class="modal-title" id="exampleModalLabel">Agregar nuevo empleado</h3>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+          
         </div>
         <div class="modal-body">
           <div class="col-md-12">
@@ -103,12 +105,26 @@
             </div>
           </div>
 
+           <div class="form-group row">
+            <div class="col-md-12">
+              <label class="col-form-label">Usuario</label>
+              <input type="text" name="usuario" id="usuario" class="form-control" placeholder="Usuario">
+            </div>
+          </div>
+
+           <div class="form-group row">
+            <div class="col-md-12">
+              <label class="col-form-label">Contraseña</label>
+              <input type="password" name="contraseña" id="contraseña" class="form-control" placeholder="Contraseña">
+            </div>
+          </div>
+
         </div>
 
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
 
-          <button type="button" id="btn_save" class="btn btn-primary" onclick="save_empleado();">
+          <button type="button" id="btn_save" class="btn btn-primary">
             Guardar</button>
 
         </div>
@@ -125,9 +141,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h3 class="modal-title" id="exampleModalLabel">Editar empleado</h3>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+       
         </div>
         <div class="modal-body">
           <div class="col-md-12">
@@ -195,9 +209,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Eliminar empleado</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+         
         </div>
         <div class="modal-body">
           <strong>¿Seguro que desea eliminar este empleado?</strong>
@@ -231,6 +243,8 @@
     var telefono = $("#telefono").val();
     var fecha_nacimiento = $("#fecha_nacimiento").val();
     var direccion = $("#direccion").val();
+    var usuario = $("#usuario").val();
+    var contraseña = $("#contraseña").val();
 
 
     $.ajax({
@@ -244,6 +258,9 @@
         telefono: telefono,
         fecha_nacimiento: fecha_nacimiento,
         direccion: direccion,
+        usuario: usuario,
+        contraseña: contraseña,
+
       },
       success: function(data) {
         if (data == null) {
@@ -372,5 +389,10 @@
         this.disabled = false;
       },
     });
+  }
+
+  function Limpiar(){
+    document.getElementById("validacion").innerHTML = "";
+    document.getElementById("validacion_edit").innerHTML = "";
   }
 </script>

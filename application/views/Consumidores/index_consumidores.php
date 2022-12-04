@@ -7,7 +7,7 @@
   <div class="row">
     <div class="col-sm-12">
       <div class="well">
-        <nav class="float-right"><?php ?><a href="#" class="btn btn-primary" data-toggle="modal" data-target="#Modal_Add"><span class="fa fa-plus"></span> Agregar Nuevo Cliente</a><?php ?><br><br></nav>
+        <nav class="float-right"><?php ?><a href="#" onclick="Limpiar()" class="btn btn-primary" data-toggle="modal" data-target="#Modal_Add"><span class="fa fa-plus"></span> Agregar Nuevo Cliente</a><?php ?><br><br></nav>
         <table class="table table-striped" id="mydata">
           <thead>
             <tr>
@@ -17,6 +17,8 @@
               <th>Correo cliente</th>
               <th>Fecha de nacimiento cliente</th>
               <th>Direccion cliente</th>
+              <th>Usuario</th>
+
               <th>Acciones</th>
 
             </tr>
@@ -31,6 +33,8 @@
               echo "<td>" . $clie->correo . "</td>";
               echo "<td>" . $clie->fecha_nacimiento . "</td>";
               echo "<td>" . $clie->direccion . "</td>";
+              echo "<td>" . $clie->usuario . "</td>";
+
 
               echo "<td>";
               echo "<a class='btn btn-success' title='Editar Cliente' onclick='editar(" . $clie->id_cliente . ")'><span class='glyphicon glyphicon-edit'></span></a>";
@@ -54,9 +58,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h3 class="modal-title" id="exampleModalLabel">Agregar nuevo cliente</h3>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+   
         </div>
         <div class="modal-body">
           <div class="col-md-12">
@@ -105,12 +107,26 @@
             </div>
           </div>
 
+          <div class="form-group row">
+            <div class="col-md-12">
+              <label class="col-form-label">Usuario:</label>
+              <input type="text" name="usuario" id="usuario" class="form-control" placeholder="Usuario cliente">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="col-md-12">
+              <label class="col-form-label">Contraseña:</label>
+              <input type="password" name="password" id="password" class="form-control" placeholder="Contraseña cliente">
+            </div>
+          </div>
+
         </div>
 
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
 
-          <button type="button" id="btn_save" class="btn btn-primary" onclick="save_cliente();">
+          <button type="button" id="btn_save" class="btn btn-primary">
             Guardar</button>
 
         </div>
@@ -127,9 +143,6 @@
       <div class="modal-content">
         <div class="modal-header">
           <h3 class="modal-title" id="exampleModalLabel">Editar cliente</h3>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
         </div>
         <div class="modal-body">
           <div class="col-md-12">
@@ -203,9 +216,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Eliminar cliente</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+ 
         </div>
         <div class="modal-body">
           <strong>¿Seguro que desea eliminar este cliente?</strong>
@@ -241,6 +252,10 @@
     var fecha = $("#fecha").val();
     var direccion = $("#direccion").val();
 
+    var usuario = $("#usuario").val();
+    var password = $("#password").val();
+
+
     $.ajax({
       type: "POST",
       url: "<?php echo site_url('Clientes/guardar_cliente') ?>",
@@ -253,6 +268,8 @@
         correo: correo,
         fecha: fecha,
         direccion: direccion,
+        usuario: usuario, 
+        password: password,
       },
       success: function(data) {
         if (data == null) {
@@ -296,7 +313,7 @@
         $('[name="edit_nombre"]').val(data[0].nombre);
         $('[name="edit_telefono"]').val(data[0].telefono);
         $('[name="edit_correo"]').val(data[0].correo);
-        $('[name="edit_fecha"]').val(data[0].fecha);
+        $('[name="edit_fecha"]').val(data[0].fecha_nacimiento);
         $('[name="edit_direccion"]').val(data[0].direccion);
 
         $("#Modal_Edit").modal("show");
@@ -384,5 +401,10 @@
         this.disabled = false;
       },
     });
+  }
+
+  function Limpiar(){
+    document.getElementById("validacion").innerHTML = "";
+    document.getElementById("validacion_edit").innerHTML = "";
   }
 </script>

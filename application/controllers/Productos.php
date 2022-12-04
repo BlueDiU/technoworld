@@ -14,9 +14,6 @@ class Productos extends Base
   {
     $data['productos'] = $this->Productos_model->get_productos();
 
-    /*echo "<pre>";
-		print_r($data['productos']);*/
-
     $data['sucursal'] = $this->Productos_model->get_sucursal(null);
     $data['marca'] = $this->Productos_model->get_marca(null);
     $data['categoria'] = $this->Productos_model->get_categoria(null);
@@ -40,7 +37,7 @@ class Productos extends Base
     $marca = $this->input->post('marca');
     $categoria = $this->input->post('categoria');
     $proveedor = $this->input->post('proveedor');
-    //$archivo1 =	$this->upload->do_upload('archivo1');
+
 
     $data = '';
     $bandera = true;
@@ -66,10 +63,6 @@ class Productos extends Base
       $bandera = false;
     }
 
-    /*if($archivo1 == null){
-			$data .= 'Debe de subir una imagen <br>';
-    		$bandera = false;
-		}*/
 
     if ($bandera) {
       $data = array(
@@ -98,17 +91,10 @@ class Productos extends Base
 
     $data['ver_productos'] = $this->Productos_model->get_productos($code);
 
-    /*echo "<pre>";
-		print_r($data['ver_productos']);*/
-
-
     $data['edit_sucursal'] = $this->Productos_model->get_sucursal($data['ver_productos'][0]->id_sucursal);
     $data['edit_marca'] = $this->Productos_model->get_marca($data['ver_productos'][0]->id_marca);
     $data['edit_categoria'] = $this->Productos_model->get_categoria($data['ver_productos'][0]->id_categoria);
     $data['edit_proveedor'] = $this->Productos_model->get_proveedor($data['ver_productos'][0]->id_proveedor);
-
-
-    //print_r($data['edit_marca']);
 
 
     echo json_encode($data);

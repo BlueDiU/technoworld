@@ -6,14 +6,18 @@ class Inicio extends Base
   public function __construct()
   {
     parent::__construct();
+
+    $this->load->model('Productos_model');
   }
 
   function index()
   {
 
+    $data['productos'] = $this->Productos_model->get_productos(null);
+
     $this->load->view('dashboard/header');
     $this->load->view('dashboard/menus');
-    $this->load->view('Inicio/index');
+    $this->load->view('Inicio/index', $data);
     $this->load->view('dashboard/footer');
   }
 
@@ -39,7 +43,13 @@ class Inicio extends Base
 
             redirect('Inicio');
           }
+        }else{
+          echo'<script type="text/javascript">alert("Error, Revise usuario y contraseña");</script>';
+
         }
+      }else{
+          echo'<script type="text/javascript">alert("Error, Revise usuario y contraseña");</script>';
+   
       }
     }
 
@@ -54,4 +64,6 @@ class Inicio extends Base
     $this->load->view('Clientes/registro');
     $this->load->view('dashboard/footer');
   }
+
+
 }

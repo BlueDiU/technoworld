@@ -30,6 +30,9 @@ class Empleados extends Base
     $telefono = $this->input->post('telefono');
     $fecha_nacimiento = $this->input->post('fecha_nacimiento');
     $direccion = $this->input->post('direccion');
+    $usuario = $this->input->post('usuario');
+    $contraseña = $this->input->post('contraseña');
+
 
     $data = '';
     $bandera = true;
@@ -55,16 +58,41 @@ class Empleados extends Base
       $bandera = false;
     }
 
+    if ($usuario == null) {
+      $data .= 'Debe de ingresar un usuario<br>';
+      $bandera = false;
+    }
+
+    if ($contraseña == null) {
+      $data .= 'Debe de ingresar una contraseña<br>';
+      $bandera = false;
+    }
+
     if ($bandera) {
+
+      $data2 = array(
+        'usuario'             => $usuario,
+        'contrasenia'         => md5($contraseña),
+        'rol'                 => 1,
+        'estado'              => 1,
+      );
+
+      $this->Empleados_model->save_usuario($data2);
+
       $data = array(
-        'id_cargo'     => $cargo,
-        'nombre'     => $nombre,
-        'telefono'   => $telefono,
-        'fecha_nacimiento'     => $fecha_nacimiento,
-        'direccion'     => $direccion,
-        'estado'     => 1,
+        'id_cargo'          => $cargo,
+        'nombre'            => $nombre,
+        'telefono'          => $telefono,
+        'fecha_nacimiento'  => $fecha_nacimiento,
+        'direccion'         => $direccion,
+        'id_usuario'        => $this->db->insert_id(),
+        'estado'            => 1,
       );
       $this->Empleados_model->save_empleado($data);
+
+       
+
+
       echo json_encode(null);
     } else {
       echo json_encode($data);

@@ -5,10 +5,12 @@ class Empleados_model extends CI_Model
   //Funcion para obtener todos los empleados
   function get_empleados($code = null)
   {
-    $this->db->select('empleado.*, cargo.id_cargo, cargo.tipo_cargo');
+    $this->db->select('empleado.*, cargo.id_cargo, cargo.tipo_cargo, usuarios.usuario');
 
     $this->db->from('empleado');
     $this->db->join('cargo', 'cargo.id_cargo=empleado.id_cargo');
+    $this->db->join('usuarios', 'usuarios.id_usuario=empleado.id_usuario');
+
 
     $this->db->where('empleado.estado = 1');
 
@@ -58,5 +60,12 @@ class Empleados_model extends CI_Model
     $this->db->where('id_empleado', $code);
     $this->db->update('empleado', $data);
     return true;
+  }
+
+  //Guarda el usuario del empleado
+  function save_usuario($data)
+  {
+    $result = $this->db->insert('usuarios', $data);
+    return $result;
   }
 }

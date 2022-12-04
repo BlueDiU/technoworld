@@ -18,7 +18,7 @@
 
       <li class="nav-item">
         <a href="<?= base_url(); ?>index.php/Inicio/login"><button class="btn btn-danger btn-primary-custom">
-            Iniciar Sesión
+            Cerrar Sesion
           </button></a>
       </li>
       <li class="nav-item">

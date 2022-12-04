@@ -14,61 +14,21 @@
   <body>
     <!-- Products section -->
     <div class="products-container container">
-      <article class="card">
-        <img
-          src="https://www.att.com/idpassets/global/devices/phones/apple/apple-iphone-12/carousel/blue/64gb/6861C-1_carousel.png"
-          alt="producto"
-        />
-        <section>
-          <h5>Iphone 12 (Apple)</h5>
-          <small class="text-muted">Telefonos</small>
-          <div>
-            <b>$900</b>
-          </div>
-        </section>
-      </article>
 
-      <article class="card">
-        <img
-          src="https://www.att.com/idpassets/global/devices/phones/apple/apple-iphone-12/carousel/blue/64gb/6861C-1_carousel.png"
-          alt="producto"
-        />
-        <section>
-          <h5>Iphone 12 (Apple)</h5>
-          <small class="text-muted">Telefonos</small>
-          <div>
-            <b>$900</b>
-          </div>
-        </section>
-      </article>
+      <?php
+            foreach ($productos as $prod) {
 
-      <article class="card">
-        <img
-          src="https://www.att.com/idpassets/global/devices/phones/apple/apple-iphone-12/carousel/blue/64gb/6861C-1_carousel.png"
-          alt="producto"
-        />
-        <section>
-          <h5>Iphone 12 (Apple)</h5>
-          <small class="text-muted">Telefonos</small>
-          <div>
-            <b>$900</b>
-          </div>
-        </section>
-      </article>
+        echo "<article class='card'>";
+        echo "<img src='https://www.att.com/idpassets/global/devices/phones/apple/apple-iphone-12/carousel/blue/64gb/6861C-1_carousel.png' alt='producto' />";
+        
+        echo "<section> <h5>" . $prod->nombre . "</h5> <small class='text-muted'>" . $prod->nombre_categoria. "</small>";
 
-      <article class="card">
-        <img
-          src="https://www.att.com/idpassets/global/devices/phones/apple/apple-iphone-12/carousel/blue/64gb/6861C-1_carousel.png"
-          alt="producto"
-        />
-        <section>
-          <h5>Iphone 12 (Apple)</h5>
-          <small class="text-muted">Telefonos</small>
-          <div>
-            <b>$900</b>
-          </div>
-        </section>
-      </article>
+        echo "<div> <b> $" . $prod->precio . "</b></div></section></article> ";
+        
+      
+            }
+      ?>
+
     </div>
 
 
